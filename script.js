@@ -80,20 +80,24 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Resume download functionality
     const resumeBtn = document.querySelector('.resume-btn');
-    
+
     resumeBtn.addEventListener('click', function() {
-        // Create a temporary PDF content for demonstration
-        // In a real scenario, this would link to an actual PDF file
         const link = document.createElement('a');
-        link.href = 'assets/file/tejaswnivechalapu.pdf'; // Replace with actual PDF path
+        link.href = 'assets/file/tejaswinivechalapu.pdf';
         link.download = 'Vechalapu_Tejaswini_Resume.pdf';
-        
-        // Show a message since we don't have an actual PDF
-        showNotification('Resume download will be available soon!', 'info');
-        
-        // In a real implementation, you would use:
-        // link.href = 'path/to/resume.pdf';
-        // link.click();
+
+        // Check if the file exists or is accessible
+        fetch(link.href)
+            .then(response => {
+                if (response.ok) {
+                    link.click();
+                } else {
+                    showNotification('Resume file not found. Please check the link or try again later!', 'error');
+                }
+            })
+            .catch(error => {
+                showNotification('An error occurred while downloading the resume. Please try again later.', 'error');
+            });
     });
     
     // Contact form submission with Formspree
