@@ -78,27 +78,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Resume download functionality
-    const resumeBtn = document.querySelector('.resume-btn');
+    // // Resume download functionality
+    // const resumeBtn = document.querySelector('.resume-btn');
 
-    resumeBtn.addEventListener('click', function() {
-        const link = document.createElement('a');
-        link.href = 'assets/file/tejaswinivechalapu.pdf';
-        link.download = 'Vechalapu_Tejaswini_Resume.pdf';
+    // resumeBtn.addEventListener('click', function() {
+    //     const link = document.createElement('a');
+    //     link.href = 'assets/file/tejaswinivechalapu.pdf';
+    //     link.download = 'Vechalapu_Tejaswini_Resume.pdf';
 
-        // Check if the file exists or is accessible
-        fetch(link.href)
-            .then(response => {
-                if (response.ok) {
-                    link.click();
-                } else {
-                    showNotification('Resume file not found. Please check the link or try again later!', 'error');
-                }
-            })
-            .catch(error => {
-                showNotification('An error occurred while downloading the resume. Please try again later.', 'error');
-            });
-    });
+    //     // Check if the file exists or is accessible
+    //     fetch(link.href)
+    //         .then(response => {
+    //             if (response.ok) {
+    //                 link.click();
+    //             } else {
+    //                 showNotification('Resume file not found. Please check the link or try again later!', 'error');
+    //             }
+    //         })
+    //         .catch(error => {
+    //             showNotification('An error occurred while downloading the resume. Please try again later.', 'error');
+    //         });
+    // });
     
     // Contact form submission with Formspree
 const contactForm = document.getElementById('contactForm');
