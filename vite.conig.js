@@ -7,8 +7,12 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: 'assets/**/*', // Copies all files in assets folder
-          dest: 'assets',
+          src: 'assets/file/Vechalapu_Tejaswini_Resume.pdf',
+          dest: 'assets/file',
+        },
+        {
+          src: 'assets/images/photo.jpg',
+          dest: 'assets/images',
         },
       ],
     }),
